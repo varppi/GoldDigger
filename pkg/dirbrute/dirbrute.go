@@ -12,11 +12,15 @@ import (
 )
 
 var Threads int
+var Wordlist string
 
 func Brute(URL string) ([]string, error) {
+	if Wordlist == "" {
+		Wordlist = "wordlists/common.txt"
+	}
 	URL = strings.TrimSuffix(URL, "/")
 	resultChan := make(chan string, 5000)
-	wordlistHandle, err := os.Open("wordlists/common.txt")
+	wordlistHandle, err := os.Open(Wordlist)
 	if err != nil {
 		return nil, err
 	}

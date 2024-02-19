@@ -20,6 +20,7 @@ var Settings struct {
 	URL       string
 	Keyword   string
 	Out       string
+	Wordlist  string
 	Depth     int
 	Threads   int
 	Quiet     bool
@@ -49,6 +50,7 @@ func main() {
 	flag.StringVar(&Settings.URL, "u", "", "URL: URL to crawl.")
 	flag.StringVar(&Settings.Keyword, "k", "", "Keyword: A keyword the URL must include in it to be considered part of the scope. (default: same domain)")
 	flag.StringVar(&Settings.Out, "o", "", "Output: Writes results to a file.")
+	flag.StringVar(&Settings.Wordlist, "w", "", "Wordlist: Custom directory bruteforce wordlist")
 	flag.IntVar(&Settings.Depth, "d", 2, "Depth: How deep to crawl.")
 	flag.IntVar(&Settings.Threads, "t", 10, "Threads: How many threads to use in directory bruteforcing.")
 	flag.BoolVar(&Settings.Quiet, "q", false, "Quiet: Does not display the costemic stuff.")
@@ -64,6 +66,7 @@ func main() {
 
 	logs.Quiet = Settings.Quiet
 	dirbrute.Threads = Settings.Threads
+	dirbrute.Wordlist = Settings.Wordlist
 
 	if !UrlRegex.MatchString(Settings.URL) {
 		logs.Error("Invalid URL!")
@@ -90,7 +93,7 @@ func main() {
 	if !Settings.NoBrute {
 		dirBruteURLs, err := dirbrute.Brute(Settings.URL)
 		if err != nil {
-			fmt.Println(err)
+			logs.Error(err.Error())
 		}
 		for _, URL := range dirBruteURLs {
 			allURLsFound[URL] = true
@@ -143,6 +146,10 @@ func main() {
 
 	//RESULTS
 	fmt.Println()
+	if len(allURLsFound) == 0 {
+		logs.Error("No results :(")
+		return
+	}
 	logs.Success("RESULTS:")
 	var outputHandle *os.File
 	if Settings.Out != "" {
