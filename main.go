@@ -33,6 +33,7 @@ var UrlRegex *regexp.Regexp = regexp.MustCompile(`https?:\/\/(www\.)?[-a-zA-Z0-9
 var SensitiveFiles []string = []string{".sql", ".bak", ".conf", ".txt", ".json", ".sqlite", ".sqlite3", ".db", ".zip", ".tar", ".rar", ".old", ".gz", ".config", ".pdf"}
 
 func main() {
+	fmt.Println()
 	logo := "\033[33m" + `	                                                      |
 	   ▄████   █████   ██     █████▄   █████▄   ██   ▄████o   ▄████  █████   ██▀███|  
 	  ██  ▀█ ██   ██  ██     ██▀ ██▌ |██▀ ██▌  ██  ██  ▀█   ██  ▀█  █   ▀   ██   ██o
@@ -85,7 +86,7 @@ func main() {
 	allURLsFound := make(map[string]bool)
 	var targetURLs []string = []string{Settings.URL}
 
-	if !Settings.Quiet {
+	if !Settings.Quiet && !Settings.NoBrute {
 		logs.Info("Directory bruteforcing")
 	}
 
