@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/R00tendo/GoldDigger/pkg/logs"
+	"github.com/SpoofIMEI/GoldDigger/pkg/logs"
 )
 
 var Threads int

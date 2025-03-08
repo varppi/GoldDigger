@@ -1,4 +1,4 @@
-module github.com/R00tendo/GoldDigger
+module github.com/SpoofIMEI/GoldDigger
 
 go 1.20
 
