@@ -1,11 +1,11 @@
 # GoldDigger
-![golddigger-github](https://github.com/R00tendo/GoldDigger/assets/72181445/d47ceace-cb86-4c6c-b430-50880356b19e)
+![golddigger-github](https://github.com/SpoofIMEI/GoldDigger/assets/72181445/d47ceace-cb86-4c6c-b430-50880356b19e)
 
 ### GolDigger is an easy to use automated web crawler and directory bruteforcer.
 
 ## Installation
 ```
-go install github.com/R00tendo/GoldDigger@latest
+go install github.com/SpoofIMEI/GoldDigger@latest
 ```
 
 #### Add ~/go/bin to your $PATH
@@ -26,4 +26,4 @@ GolDigger -u "https://somesite.com" -w ~/Seclists/Discovery/Web-Content/raft-med
 ```
 
 ## Example output
-<img src="https://github.com/R00tendo/GoldDigger/assets/72181445/e5bc1f82-13a6-4964-a555-62a87f88b0ca" width=800></img>
+<img src="https://github.com/SpoofIMEI/GoldDigger/assets/72181445/e5bc1f82-13a6-4964-a555-62a87f88b0ca" width=800></img>
