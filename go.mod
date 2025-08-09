@@ -1,4 +1,4 @@
-module github.com/SpoofIMEI/GoldDigger
+module github.com/Varppi/GoldDigger
 
 go 1.20
 

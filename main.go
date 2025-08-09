@@ -10,10 +10,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/SpoofIMEI/GoldDigger/pkg/connection"
-	"github.com/SpoofIMEI/GoldDigger/pkg/crawler"
-	"github.com/SpoofIMEI/GoldDigger/pkg/dirbrute"
-	"github.com/SpoofIMEI/GoldDigger/pkg/logs"
+	"github.com/Varppi/GoldDigger/pkg/connection"
+	"github.com/Varppi/GoldDigger/pkg/crawler"
+	"github.com/Varppi/GoldDigger/pkg/dirbrute"
+	"github.com/Varppi/GoldDigger/pkg/logs"
 )
 
 var Settings struct {
