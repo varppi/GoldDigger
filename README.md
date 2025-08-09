@@ -5,7 +5,7 @@
 
 ## Installation
 ```
-go install github.com/SpoofIMEI/Varppi@latest
+go install github.com/Varppi/GoldDigger@latest
 ```
 
 #### Add ~/go/bin to your $PATH
